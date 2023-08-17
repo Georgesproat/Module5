@@ -87,7 +87,7 @@ router.post("/", (req, res) => {
 //TODO - try completing this new route for a PUT request which will update data for an existing friend
 
 router.put("/:id", (req, res) => {
-  let friendId = req.params.id;
+ let friendId = parseInt(req.params.id);
   let updatedFriendData = req.body;
 
   const updatedFriend = friendController.updateFriendById(
