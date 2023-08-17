@@ -10,6 +10,8 @@ app.use("/mytest", testRoutes);
 
 app.use("/calculator", calculatorRoute);
 
+app.use("/friends", friendRoutes);
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
