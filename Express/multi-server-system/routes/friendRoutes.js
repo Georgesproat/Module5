@@ -39,11 +39,9 @@ router.get("/startsWith", (req, res) => {
     friendController.filterFriendsByLetter(startsWithLetter);
 
   if (filteredFriends.length === 0) {
-    return res
-      .status(404)
-      .json({
-        error: "No friends with names starting with the specified letter found."
-      });
+    return res.status(404).json({
+      error: "No friends with names starting with the specified letter found."
+    });
   }
 
   res.status(200).json(filteredFriends);
@@ -84,10 +82,10 @@ router.post("/", (req, res) => {
   }
 });
 
-//TODO - try completing this new route for a PUT request which will update data for an existing friend
+// a PUT request which will update data for an existing friend
 
 router.put("/:id", (req, res) => {
- let friendId = parseInt(req.params.id);
+  let friendId = parseInt(req.params.id);
   let updatedFriendData = req.body;
 
   const updatedFriend = friendController.updateFriendById(
@@ -102,12 +100,9 @@ router.put("/:id", (req, res) => {
   res.status(200).json(updatedFriend);
 });
 
-
-
 // Catch-all route for undefined endpoints
 router.get("*", (req, res) => {
   res.status(404).json({ error: "Endpoint not found." });
 });
 
 module.exports = router;
-
