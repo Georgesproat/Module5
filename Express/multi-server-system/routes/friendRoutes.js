@@ -103,6 +103,7 @@ router.put("/:id", (req, res) => {
 });
 
 
+
 // Catch-all route for undefined endpoints
 router.get("*", (req, res) => {
   res.status(404).json({ error: "Endpoint not found." });

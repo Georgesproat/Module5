@@ -5,6 +5,7 @@ const testRoutes = require("./routes/myTestRoutes");
 const calculatorRoute = require("./routes/calculatorRoute");
 const friendRoutes = require("./routes/friendRoutes");
 
+app.use(express.json());
 app.use("/", express.static("public"));
 app.use("/mytest", testRoutes);
 app.use("/calculator", calculatorRoute);

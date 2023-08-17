@@ -16,7 +16,8 @@ function filterFriendsByGender(gender) {
 }
 
 function findFriendById(id) {
-  return friends.find((friend) => friend.id === id);
+  const parsedId = parseInt(id); 
+  return friends.find((friend) => friend.id === parsedId);
 }
 
 function addFriend(newFriend) {
@@ -34,19 +35,20 @@ function updateFriendById(id, updatedData) {
   const friendIndex = friends.findIndex((friend) => friend.id === id);
 
   if (friendIndex === -1) {
-    return null; 
+    return null;
   }
 
   const updatedFriend = {
     ...friends[friendIndex],
     ...updatedData,
-    id: id
+    id: friends[friendIndex].id 
   };
 
   friends[friendIndex] = updatedFriend;
 
   return updatedFriend;
 }
+
 
 
 module.exports = {
