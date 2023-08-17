@@ -1,0 +1,170 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Calculator API",
+    "description": "API for performing calculations",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Calculator",
+      "description": "API for performing various calculations"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+
+  "paths": {
+    "/calculator/add": {
+      "get": {
+        "tags": ["Calculator"],
+        "summary": "Add two numbers",
+        "parameters": [
+          {
+            "name": "num1",
+            "in": "query",
+            "description": "The first number",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "num2",
+            "in": "query",
+            "description": "The second number",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success: Returns the sum of two numbers",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "number",
+                  "description": "The sum of the numbers"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/calculator/subtract": {
+      "get": {
+        "tags": ["Calculator"],
+        "summary": "Subtract two numbers",
+        "parameters": [
+          {
+            "name": "num1",
+            "in": "query",
+            "description": "The first number",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "num2",
+            "in": "query",
+            "description": "The second number",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success: Returns the difference between two numbers",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "number",
+                  "description": "The difference between the numbers"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/calculator/multiply": {
+      "get": {
+        "tags": ["Calculator"],
+        "summary": "Multiply two numbers",
+        "parameters": [
+          {
+            "name": "num1",
+            "in": "query",
+            "description": "The first number",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "num2",
+            "in": "query",
+            "description": "The second number",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success: Returns the product of two numbers",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "number",
+                  "description": "The product of the numbers"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/calculator/divide": {
+      "get": {
+        "tags": ["Calculator"],
+        "summary": "Divide two numbers",
+        "parameters": [
+          {
+            "name": "num1",
+            "in": "query",
+            "description": "The first number",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "num2",
+            "in": "query",
+            "description": "The second number",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success: Returns the quotient of two numbers",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "number",
+                  "description": "The quotient of the numbers"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
